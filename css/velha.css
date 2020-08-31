@@ -1,8 +1,7 @@
 /* Aqui eu posso declarar variáveis. */
 :root{
-    --color-primary:rgb(0,128,0);
-    --color-secundary:rgb(0,91,0);
-    --color-geral: #121214;
+    --color-primary: #121214;
+    --color-secundary:rgb(35, 35, 35);
     --font-color: rgb(255,255,250);
 }
 
@@ -19,8 +18,8 @@ html, body {
 .container {
     display: grid;
     grid-template-columns: 200px 200px 200px;
-    grid-template-rows: 20vh 20vh 20vh 20vh calc(20vh - 20px);
-    background-color: var(--color-geral);
+    grid-template-rows: 20vh 20vh 20vh 20vh 20vh;
+    background-color: var(--color-primary);
     color: var(--font-color);
 
     grid-template-areas:  "h  h  h"
@@ -29,27 +28,27 @@ html, body {
                           "v7 v8 v9"
                           "f  f  f";
 
-    grid-gap:5px;
     justify-content: center;
     align-content: center;
 }
 
 header {
     grid-area: h;
-    display: grid;
-    grid-gap: 5px;
     justify-content: start;
     align-content: center;
+    margin-top: 10px;
+    margin-bottom: 5px;
 }
 
 footer{
     grid-area: f;
     text-align: center;
+    margin-top: 20px;
     
 }
 
 .container > div {
-    background-color: var(--color-primary);
+    border: 2px solid var(--font-color);
     display: grid;
     justify-content: center;
     align-content: center;
@@ -61,88 +60,40 @@ footer{
 .container > div:hover{
     background-color: var(--color-secundary);
     cursor: pointer;
+    transition: 200ms;
 }
 
 /* Daqui para baixo CSS especifico */
 
-
-
 .opcoes-jogo{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    grid-template-areas: "hgx bg"
-                         "hgo bg";
-                       
-                         justify-content: center;
-    align-content: center;
-}
-
-
-.header-group{
-    margin-bottom: 5px;
-}
-
-.header-group #usuario-x{
-    margin-bottom: 5px;
-    grid-area: hgx;
-
-}
-.header-group #usuario-O{
-    margin-bottom: 5px;
-    grid-area: hgo;
+    display: flex;
+    justify-content: space-around;
 
 }
 
-#btn-jogar{
-    grid-area: bg;
-    width: 200px;
-    height: 90px;
+button {
+    width: 180px;
+    height: 70px;
     align-self: center;
     justify-self: end;
-    background-color: var(--color-primary);
-    border:0;
+    background-color: transparent;
+    border: 1px solid var(--font-color);
     font-size: 20px;
     font-weight: 600;
     color: var(--font-color);
 }
 
-#btn-jogar:hover{
+button:hover{
     background-color: var(--color-secundary);
-    cursor: pointer;
-}
-
-.header-group > label {
-    font-size: 22px;
-}
-
-.header-group > input {
-    padding: 5px;
-    text-transform: none;
-    text-decoration: none;
-    border:0;
-    background-color: transparent;
-    border: 1px solid  var(--color-primary);
-    color: var(--color-secundary);
-    font-weight: 800;
-    font-size: 20px;
-    margin-left: 15px;
-}
-
-.painel-group{
-    font-size: 20px;
-    padding-top: 10px;
-}
-.pontos{
-    margin-left: 50px;
-    float: right;
-}
-.pontos > strong {
-    font-size: 20px;
+    cursor: pointer;    
+    transition: 200ms;
 }
 
 .proximo-jogar{
-    margin-top: 50px;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 35px;
+    font-weight: 800;
 }
 
 .esconder{
